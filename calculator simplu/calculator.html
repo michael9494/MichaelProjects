@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+    <div>
+        <p>Enter two numbers, select a math, then click the button.<br>
+        The answer will be shown below.</p>
+        <form>
+            1st number: <input type="text" name="number1" id = 'number1'>
+            2nd number: <input type="text" name="number2" id = 'number2'>
+            <br>
+            <input type="radio" name="button" id = 'add' >Add <br>
+            <input type="radio" name="button" id = 'substract'>Subtract <br>
+            <input type="radio" name="button" id = 'multiply'>Multiply <br>
+            <input type="radio" name="button" id = 'division'>Division <br>
+            <input type="button" name="calc" onclick="calculate()" value="Calculate" id="buton"> <br>              
+        </form>
+        <p id="math_res">?</p>
+    </div>
+
+    <script>
+        function calculate(){
+            //Obtaining the references to the text inputs
+            var number1 = parseInt(document.getElementById('number1').value);
+            var number2 = parseInt(document.getElementById('number2').value);
+
+            //Reference of the result Box
+            var resultBox = document.getElementById('math_res');
+            resultBox.innerHTML = '';
+
+            //Reference of the radio buttons
+            var buttonAdd = document.getElementById('add');
+            var buttonSubstract = document.getElementById('substract');
+            var buttonMultiply = document.getElementById('multiply');
+            var buttonDivision = document.getElementById('division');
+
+            //Make the magic
+            if(buttonAdd.checked == true){
+                resultBox.innerHTML = number1 + number2
+            }
+            else{
+                if(buttonSubstract.checked == true){
+                    resultBox.innerHTML = number1 - number2
+                }
+                else{
+                    if(buttonMultiply.checked == true){
+                        resultBox.innerHTML = number1 * number2
+                    }
+                    else{
+                        if(buttonDivision.checked == true){
+                            resultBox.innerHTML = number1 / number2
+                        }
+                    }
+                }
+            }            
+        }
+</script>
+</body>
+</html>

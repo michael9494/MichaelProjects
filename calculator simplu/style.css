@@ -1,0 +1,22 @@
+html {
+    background-color:azure;
+    font-family:"Times New Roman", Times, serif;
+  position: absolute;
+  left:auto;
+  top: 0px;
+  z-index: -1;
+}
+
+#buton{
+    color: gold;
+    background-color: red;
+    font-size: 25px;
+    padding: 10px 35px;
+    transform: matrix(1, -0.2, 0, 1, 0, 6);
+}
+
+#math_res {
+  position: relative;
+  text-align: center;
+  
+}
